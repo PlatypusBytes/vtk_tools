@@ -14,8 +14,8 @@ mat_id = np.array(data["material_ID"])
 mat = np.array(data["material_value"])
 
 for i in range(10):
-    vtk = VTK_writer.Write('./output', file_name=f"data_{str(i)}")
-    vtk.add_mesh(nodes, elements)
+    vtk = VTK_writer.Write('./output', file_name=f"data_{str(i)}", write_binary=True)
+    vtk.add_mesh(nodes, elements, "hexa8")
     vtk.add_vector("displacement", disp)
     vtk.add_vector("velocity", vel, header=False)
     vtk.add_scalar("ID", mat_id)
