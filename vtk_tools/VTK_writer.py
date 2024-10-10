@@ -20,8 +20,6 @@ class Write:
         self.file_mode = "wb" if write_binary else "w"
         self.file = open(os.path.join(self.output_folder, file_name + ".vtk"), self.file_mode)
 
-        # self.cell_types = [5, 22, 9, 12, 25, 10, 24]
-
         # nb_nodes and cell type according to VTK manual.
         self.element_type_map = {"tri3": (3, 5),
                                  "tri6": (6, 22),
